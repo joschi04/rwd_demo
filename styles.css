@@ -5,21 +5,26 @@
     padding: 0;
 }
 
+/* ----------------  header ---------------------*/
 header{
-    font-size: 1.5em;
-}
-
-h1{
-    /*font-size: 300%; 3 mal der 100% Schriftgröße: 16px*3=48px */
-    /*font-size: 3em; /* 3 em beziehen sich auf header und nicht auf *-Selektor: 16px*1,5*3=72px
-     /*CSS3*/
-    font-size: 2rem; /*Root-em*/
+    /*font-size: 1.5em;*/
+    background-image: url("img/bg.jpg");
+    height: 33.57rem;
+    /*background-size: 100% 100%;*/
+    background-size: cover;
+    /*background-size: contain;*/
+    background-repeat: no-repeat;
+    /*background-position: flexibel anpassen;*/
 }
 
 nav{
     /* overflow: hidden; fload 1. Variante*/
     /* float: right; float 2. Variant
     width: 100%; float 2. Variant*/
+
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    /*opacity: 0.5; hier nicht (wegen Schrift), eher für Animation */
+    background-color: rgba(255,255,255,0.85);
 }
 
 nav ul{
@@ -37,8 +42,100 @@ nav ul li{
     /* float: right; zweite Variante mit fload*/
     display: inline-block; /* Mischform zw. Blocklevel und Innline */
     width: 12.5%; /*120px /960px*/
-    background-color: red;
-    padding: 1.041666666666667%;
+    padding: 0.65rem 1.041666666666667%;
     text-align: center;
+    text-transform: uppercase;
+    /*font-size: 300%; 3 mal der 100% Schriftgröße: 16px*3=48px */
+    /*font-size: 3em; /* 3 em beziehen sich auf header und nicht auf *-Selektor: 16px*1,5*3=72px
+     /*CSS3*/
+    /*font-size: 2rem; /*Root-em*/
+}
 
+header h1{
+    position: relative;
+    top: 8rem;
+    left:3rem;
+    font-size: 3em;
+}
+
+/* ----------------       main    ---------------------------*/
+
+main{
+    /*overflow: hidden; alte Lösung für floar clear*/
+    padding-top: 3rem;
+}
+
+img{
+    max-width: 100%;
+}
+
+.row .column h2{
+    font-size: 2em;
+}
+
+.row .column{
+    float:left;
+    text-align: center;
+    /*width: calc(33.33333333333333% - 2 * 1.041666666666667%);
+    padding:0 1.041666666666667%; alte Variante*/
+    /*CSS 3 Variante*/
+    box-sizing: border-box;
+    width: calc(33.33333333333333%);
+    padding:0 1.041666666666667%;
+}
+
+/*flow beenden pseudo class*/
+.row::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.row .column img{
+    border-radius: 50%;
+}
+
+.row .column p{
+    text-align: left;
+}
+
+@media all and (max-width: 1024px) {
+    .row .column {
+        float: none;
+        width: auto;
+    }
+}
+
+@media all and (max-width: 550px){
+    nav{
+        /* overflow: hidden; fload 1. Variante*/
+        /* float: right; float 2. Variant
+        width: 100%; float 2. Variant*/
+
+        background-color: white;
+        box-shadow: none;
+        /*opacity: 0.5; hier nicht (wegen Schrift), eher für Animation */
+    }
+
+    nav ul li {
+        display: block;
+        text-align: left;
+    }
+    header{
+        background-image: none;
+        height:auto;
+    }
+
+    header h1{
+        position: relative;
+        top: 0rem;
+    }
+}
+
+/*Retina-Display Größeres Bild hinterlegen*/
+/* 2*96dpi */
+@media all and (min-resolution: 192dpi) {
+    header {
+        background-image: url("img/bg@2x.jpg");
+    }
 }
