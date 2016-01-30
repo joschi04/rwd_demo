@@ -1,0 +1,44 @@
+/* Reset CSS Browser Default Style */
+*{
+    font-size: 100%; /* entspricht 16 px in allen Browsern entsprich 1em*/
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    font-size: 1.5em;
+}
+
+h1{
+    /*font-size: 300%; 3 mal der 100% Schriftgröße: 16px*3=48px */
+    /*font-size: 3em; /* 3 em beziehen sich auf header und nicht auf *-Selektor: 16px*1,5*3=72px
+     /*CSS3*/
+    font-size: 2rem; /*Root-em*/
+}
+
+nav{
+    /* overflow: hidden; fload 1. Variante*/
+    /* float: right; float 2. Variant
+    width: 100%; float 2. Variant*/
+}
+
+nav ul{
+    text-align: right;
+    list-style-type: none;
+
+    /*Flex-Box in CSS3 als 4 Variante
+    display: flex;
+    justify-content: flex-end;
+    */
+}
+
+nav ul li{
+    /*display: inline; geht nicht, da es zum Inline-Element wird und Breit nicht vorgegeben werden kann */
+    /* float: right; zweite Variante mit fload*/
+    display: inline-block; /* Mischform zw. Blocklevel und Innline */
+    width: 12.5%; /*120px /960px*/
+    background-color: red;
+    padding: 1.041666666666667%;
+    text-align: center;
+
+}
